@@ -96,6 +96,7 @@ dialogbox>button {
 #dialogtitle,
 #routetitle {
     font-size: 16pt;
+    margin-bottom: 1vh;
 }
 
 #routetitle {
@@ -216,8 +217,8 @@ leftbox {
     padding-left: 4px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5vh;
-    margin-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
 }
 
 .stationtitle {
@@ -242,6 +243,12 @@ leftbox {
 .changehere {
     color: rgb(65, 65, 65);
     font-size: 12pt;
+    border-left: dotted rgb(100, 100, 100) 4px;
+    padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
+    padding-left: 4px;
+    margin: 0;
+    background-color: rgb(240, 240, 240);
 }
 
 .platform {
