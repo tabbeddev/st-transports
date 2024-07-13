@@ -115,6 +115,31 @@ function buildRoutes() {
             l.classList.add("stationtitle"), l.innerText = "Travel time: " + secondStringify(getTravelTimeForStops(getStops(e[n].stations[0], e[n].stations[1], e[n].line))), t.appendChild(l);
             const a = document.createElement("span");
             a.classList.add("operator"), a.innerText = "Operated by Seacrestica Transports Outpost.", t.appendChild(a);
+
+            const st = getStops(e[n].stations[0], e[n].stations[1], e[n].line);
+            st.shift(), st.pop();
+
+            if (st.length != 0) {
+                const v = document.createElement('details');
+                v.classList.add('stopovers');
+                const u = document.createElement('summary');
+                u.innerText = 'Stopovers';
+                v.appendChild(u);
+                t.appendChild(v);
+                const vd = document.createElement('div');
+                for (const sv of st) {
+                    const p = document.createElement('p');
+                    const ps = document.createElement('span');
+                    ps.classList.add('platform');
+                    ps.innerText = 'Platform ' + getPlatformOfStop(sv, e[n].line);
+                    p.appendChild(ps);
+                    p.innerHTML += sv;
+                    vd.appendChild(p);
+                }
+                v.appendChild(vd);
+                t.appendChild(v);
+            }
+
             const i = document.createElement("p");
             i.classList.add("stationtitle");
             const d = document.createElement("span");
