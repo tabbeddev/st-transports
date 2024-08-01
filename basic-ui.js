@@ -145,7 +145,9 @@ function buildRoutes() {
             const d = document.createElement("span");
             if (d.classList.add("platform"), d.innerText = "Platform " + getPlatformOfStop(e[n].stations[1], e[n].line), i.appendChild(d), i.innerHTML += e[n].stations[1], t.appendChild(i), routebox.appendChild(t), n < e.length - 1) {
                 const e = document.createElement("p");
-                e.classList.add("changehere"), e.innerText = "Change train here", routebox.appendChild(e)
+                const ch = document.createElement("img");
+                ch.src = "change.svg"
+                e.classList.add("changehere"), e.appendChild(ch), e.innerHTML += "Change train here", routebox.appendChild(e)
             }
         }
         blackbox.style.display = "block", routebox.style.display = "block", document.getElementById("routeback")
