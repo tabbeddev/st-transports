@@ -198,8 +198,8 @@ document.getElementById("swap")
     }));
 
 function rebuildStationlist() {
-    for (const element of document.querySelectorAll('option')) {
-        element.remove();
+    while (document.querySelector('datalist').childElementCount != 0) {
+        document.querySelector('datalist').childNodes[0].remove();
     }
 
     const sortedstations = network['stations'];
