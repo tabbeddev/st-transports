@@ -42,7 +42,7 @@ button:disabled {
 }
 
 blackbox {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #000000AA;
@@ -82,7 +82,7 @@ dialogbox {
 #routebox {
     text-align: left;
     width: 90vw;
-    height: 90vh;
+    min-height: 90vh;
     top: 4vh;
     left: 4vw;
     align-items: unset;
