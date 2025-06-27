@@ -1,3 +1,7 @@
+# This project is obsolete
+
+This project was replaced with [UVNAV](https://github.com/tabbeddev/uvnav).
+
 # Seacrestica Transports (Website)
 
 For a live website go [here](https://niklas20114552.github.io/st-transports).
@@ -18,24 +22,19 @@ You may ask how an entire Railroad system can be digitalized. So lets start with
 
 ## Network
 
-The network is stored inside the ```routing.js```-file as an json dictionary. It consists out of 5 different data types.
+The network is stored inside the `routing.js`-file as an json dictionary. It consists out of 5 different data types.
 
 ### 1. Lines
 
-Example: 
+Example:
+
 ```javascript
 lines: [
-    {
-        name: "UST 1",
-        stations: [
-            "Evergreen",
-            "Outpost",
-            "Seacrestica",
-            "Pagasa City",
-            "Illyria"
-        ]
-    }
-]
+  {
+    name: "UST 1",
+    stations: ["Evergreen", "Outpost", "Seacrestica", "Pagasa City", "Illyria"],
+  },
+];
 ```
 
 So lets break one entry down:
@@ -46,42 +45,46 @@ So lets break one entry down:
 ### 2. Station
 
 Example:
+
 ```javascript
 stations: [
-    {
-        name: "Evergreen",
-        lines: [{
-            name: "UST 1",
-            platform: 1
-        }, {
-            name: "UST 2",
-            platform: 2
-        }, {
-            name: "USTe 1",
-            platform: 3
-        }, {
-            name: "USTe 2",
-            platform: 4
-        }]
-    }
-]
+  {
+    name: "Evergreen",
+    lines: [
+      {
+        name: "UST 1",
+        platform: 1,
+      },
+      {
+        name: "UST 2",
+        platform: 2,
+      },
+      {
+        name: "USTe 1",
+        platform: 3,
+      },
+      {
+        name: "USTe 2",
+        platform: 4,
+      },
+    ],
+  },
+];
 ```
 
 Lets break it down:
 
 - name: The name of the station.
 - lines: Every line that stops at this station.
-    - name: The line's name
-    - platform: The platform where the train stops
+  - name: The line's name
+  - platform: The platform where the train stops
 
 ### 3. Doublelines
 
 Example:
 
 ```javascript
-doublelines: [
-    ["UST 1", "UST 2"]
-]
+doublelines: [["UST 1", "UST 2"]];
 ```
 
 If two lines have the same stops just in reverse, they must be listed here.
@@ -97,3 +100,4 @@ Please don't touch that. thank you :)
 So now we know how the network works, we can start learning how the route finding algorithm works.
 
 The route finding algorithm uses the [Depth-First searching algorithm](https://en.wikipedia.org/wiki/Depth-first_search?useskin=vector). I'm not going to explain how it works. Please just accept that it works.
+
